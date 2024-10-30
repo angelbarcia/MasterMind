@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterMind</title>
+    <style>
+    html, body{
+        background-color: #43A047;
+    }
+    .grid-container{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 400px auto;
+        grid-template-rows: 100px 150px 400px 200px;
+        
+    }
+    
+    .title{
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        font-family:'Poppins', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+        
+    }
+    
+    .menu{
+        display: flex;
+        gap: 20px;              
+        font-weight: bold;  
+        color: white;
+        font-size: 30px;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 35px;
+    }
+    .message{
+        grid-column: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: lightgray;
+        font-size: 80px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    a{
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    a:hover{
+        color: brown;
+    }
+    .feedback{
+        display: flex;
+        justify-content: center;
+        grid-column: span 2;
+    }
+    .areaText{
+        width: 400px;
+        height: 250px;
+        margin-right: 50px;
+        margin-top: 195px;
+    }
+    .tools{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 2;
+        flex: 1
+        ;
+    }
+    button{
+        border-radius: 10px;
+        font-size: 25px;
+        border: none;
+        margin-right: 310px;
+    }
+    button:hover{
+        background-color: bisque;
+        cursor: pointer;
+    }
+
+    .address{
+        color: white;
+        border-radius: 25px;
+        width: 350px;
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 75px;
+    }
+    
+    footer{
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item title">
+            <h1 onclick="window.location.href='./index.html'">MasterMind</h1>
+        </div>
+        <div class="grid-item menu">
+            <a href="./game.html">Play!</a>
+            <a href="./instructions.html">Instructions</a>
+            <a href="./donate.html">Donate</a>
+            <a href="./about-us.html">About us</a>
+        </div>
+        <div class="grid-item message">
+            <p>You can find us here</p><br>
+        </div>
+        <div class="grid-item feedback">
+            <textarea class="areaText" placeholder="Leave us your feedback..."></textarea>  
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1033.7741586877792!2d28.823319320382858!3d41.03327863690134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa4fcc763c5fb%3A0xa3bc6f9918caa44!2zR8O8bmXFn2xpIFNlbXQgUGFya8Sx!5e0!3m2!1ses!2ses!4v1730317924185!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="grid-item tools">
+            <button onclick="" class="button">Send</button> 
+            <p class="address">
+                Company: DeepCloudsLearning <br>
+                Phone: +1 9543 161 313 <br>
+                Address: Güneşli Semt Parkı <br>
+            </p>  
+        </div>
+    </div> 
+    <footer>©2024 DeepCloudsLearning / MyVersion</footer>
+    <script>
+    </script> 
+</body>
+</html>

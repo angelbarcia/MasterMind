@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterMind</title>
+    <style>
+    html, body{
+        background-color: #43A047;
+    }
+    .grid-container{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 400px auto;
+        grid-template-rows: 100px auto auto auto auto;
+        
+    }
+    
+    .title{
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        font-family:'Poppins', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .menu{
+        display: flex;
+        gap: 20px;              
+        font-weight: bold;  
+        color: white;
+        font-size: 30px;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 35px;
+    }
+    .message{
+        grid-column: span 2;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        color: lightgray;
+        font-size: 80px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    a{
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    a:hover{
+        color: brown;
+    }
+    
+    .image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 2;
+    } 
+    
+    img{
+        width: 1500px;
+        
+    }
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 2;
+
+    }
+    button{
+        border: none;
+        border-radius: 25px;
+        width: 750px;
+        height: 50px;
+        font-size: 25px;
+        margin: 30px;
+    }
+    
+    button:hover{
+        background-color: blueviolet;
+        cursor: pointer;
+    }
+    
+    footer{
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item title">
+            <h1 onclick="window.location.href='./index.html'">MasterMind</h1>
+        </div>
+        <div class="grid-item menu">
+            <a href="./game.html">Play!</a>
+            <a href="./instructions.html">Instructions</a>
+            <a href="./donate.html">Donate</a>
+            <a href="./about-us.html">About us</a>
+        </div>
+        <div class="grid-item message">
+            <p>Welcome to the fantastic game MasterMind!</p><br>
+        </div>
+        <div class="grid-item image">
+            <img src="./assets/images/1280x720.webp" alt="A mastermind image">
+        </div>
+        <div class="grid-item button">
+            <button onclick="window.location.href='./game.html'">Play</button>
+        </div>
+       <div class="grid-item footer"><footer>©2024 DeepCloudsLearning / MyVersion</footer></div>
+    </div> 
+    
+    <script>
+    </script> 
+</body>
+</html>
