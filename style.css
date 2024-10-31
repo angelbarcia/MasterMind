@@ -1,11 +1,11 @@
 html, body{
     background-color: #43A047;
 }
-.grid-container{
-    height: 100vh;
+.grid-containertitle{
+    height: 30vh;
     display: grid;
     grid-template-columns: 400px auto;
-    grid-template-rows: 100px 150px auto;
+    grid-template-rows: 100px 150px;
     
 }
 
@@ -53,26 +53,134 @@ a:hover{
 .image{
     margin-left: 500px;
 } 
+/* Logo, Menu and message ends here*/
 
-img{
-    width: 1500px;
-    
+/* Main Game style starts*/
+.grid-containergame{
+    height: 50vh;
+    display: grid;
+    grid-template-rows: 75px 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    color: black;
+    background-color: lightgoldenrodyellow;
+    border-radius: 25px;
+    font-family: "Ubuntu", sans-serif;
+    width: 50%;
+    margin-left: 25%;
+
+}
+/* level and digits*/
+.info{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+}
+.level{
+    margin-left: 10%;
+}
+.levelNumber{
+    margin-left: 1%;
+    margin-top: 7%;
+}
+.digits{
+    margin-left: 10%;
+}
+.digitNumber{
+    margin-left: 1%;
+    margin-top: 7%;
+}
+/*lives and attempts*/
+.remaining{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+    gap: 3px;
+    margin-top: 2%;
 }
 
-button{
-    border: none;
-    border-radius: 25px;
-    width: 750px;
-    height: 50px;
-    margin-left: 350px;
+.attemptsNumber{
+    margin-right: 10%; 
+}
+
+.lives{
+    margin-top: 5%;
+}
+.livesNumber{
+    margin-right: 25%;
+     margin-top: 6%;
+}
+
+/*random number generation*/
+.secret{
+    display: flex;
+    justify-content: flex-start;
+    grid-column: span 2;
+}
+.secretNumber{
+    border: solid 5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    font-size: 50px;
+    margin-left: 30%;
+    padding: 10px;
+}
+/* guess and button*/
+.inputButton{
+    display: flex;
+    justify-content: flex-start;
+    grid-column: span 2;
+}
+label{
     font-size: 25px;
+    margin-left: 25%;
+}
+input{
+    height: 25px;
+    margin-left: 1%;
+    font-size: 20px;
+}
+button{
+    height: 31px;
+    margin-left: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #b37bb3;
+    color: white;
 }
 
 button:hover{
-    background-color: blueviolet;
+    background-color: #ababde ;
     cursor: pointer;
 }
 
+/* feedback*/
+.feedback{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    grid-column: span 2;
+    font-size: 30px;
+}
+
+.feedbackPhrase{
+    margin-bottom: 10%;
+}
+
+#restart{
+    color: black;
+    margin-left: 20px;
+    margin-top: 30px;
+    
+   
+}
+
+#restart:hover{
+    color:#43A047
+}
+
+
+/* footer starts here*/
 footer{
     color: white;
+    margin-top: 10%;
 }

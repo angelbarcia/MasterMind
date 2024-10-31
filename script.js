@@ -23,3 +23,51 @@ function create_secret(level=3) {
     }
     return get_number(digits);
 }
+
+/*attempts and lives*/
+    let attempts = 10;
+    let lives = 3;
+    let level = 1;
+function submit(){
+    const secret = "224";
+    let attemptsElement = document.querySelector(".attemptsNumber");
+    let livesElement = document.querySelector(".livesNumber");
+    let levelElement = document.querySelector(".levelNumber")
+    let guess = document.querySelector("#guess").value;
+    let feedback = document.querySelector(".feedbackPhrase");
+    let restart = document.querySelector("#restart");
+    feedback.innerHTML = "";
+        if(guess===secret){
+            feedback.innerHTML = "Congratulations! You have passed to the next level";
+            level++;
+            attempts = 12;
+            lives++;
+            levelElement.innerHTML = level;
+            livesElement.innerHTML = lives;
+            attemptsElement.innerHTML = attempts;
+        }
+        else if (attempts > 0 && lives > 0 && guess !== secret) {
+        attempts--;
+        attemptsElement.innerHTML = attempts;
+        } 
+        else if (attempts===0 && lives > 1){
+        lives--;
+        livesElement.innerHTML = lives;
+        attempts = 10;
+        attemptsElement.innerHTML = attempts;
+            }
+        else if(attempts===0 && lives===1){
+        lives--;
+        livesElement.innerHTML = lives;
+        attempts = 0;
+        attemptsElement.innerHTML = attempts;
+        feedback.innerHTML = "GAME OVER!"
+        restart.innerHTML = "Restart?"
+        }
+        else{
+            feedback.innerHTML = "GAME OVER!"
+            restart.innerHTML = "Restart?" 
+        }
+
+    
+    }
