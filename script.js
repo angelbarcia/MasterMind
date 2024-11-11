@@ -46,15 +46,16 @@ class Game {
         this.view = view;
         this.countDown = this.countDown.bind(this);
 
-        setInterval(this.countDown, 1000);
+        this.countDownInterval = setInterval(this.countDown, 1000);
     }
 
     countDown(){
         this.#counter--;
         this.view.counter.innerHTML = this.#counter;
-        if (this.#counter < 0){
+        if (this.#counter <= 0){
             this.#lives--;
             this.view.lives.innerHTML = this.#lives;
+            this.#moves = [];
             this.initializeGame();
         }
     }
@@ -72,11 +73,13 @@ class Game {
     play(){
         this.#attempts--;
         this.view.attempts.innerHTML = this.#attempts;
+        
         if (this.#attempts <= 0){
             this.#lives--;
             this.view.lives.innerHTML = this.#lives;
-            this.initializeGame();
             this.#moves = [];
+            this.initializeGame();
+        
         }
         const guess = Number(this.view.guess.value);
         if (guess === this.#secret){
@@ -86,6 +89,29 @@ class Game {
             this.#moves = [];
             this.initializeGame();
         }
+
+        if (this.#lives === 0 && this.#attempts === 10){
+            this.#attempts = 0;
+            this.view.attempts.innerHTML = this.#attempts;
+            clearInterval(this.countDownInterval);
+            this.#counter = 0;
+            this.view.counter.innerHTML = this.#counter;
+            let gamePart = document.querySelector("#gamePart");
+            gamePart.innerHTML = 
+        `<div class="modal modal-sheet position-static d-block bg-body p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content rounded-4 shadow">
+                <div class="modal-header border-bottom-0 text-center">
+                  <h1 class="modal-title fs-8">Game Over</h1>
+                </div>
+                <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+                  <button type="button" onclick="location.reload()" class="btn btn-lg btn-success" data-bs-dismiss="modal">Restart?</button>
+                </div>
+              </div>
+            </div>
+          </div>`
+        }
+
         const message = this.evaluate(guess);
         this.#moves.push(new Move(guess, message));
         this.view.moves.empty();
