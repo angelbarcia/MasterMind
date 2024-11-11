@@ -45,11 +45,12 @@ class Game {
         this.#counter = 60;
         this.view = view;
         this.countDown = this.countDown.bind(this);
-
         this.countDownInterval = setInterval(this.countDown, 1000);
+
     }
 
     countDown(){
+       
         this.#counter--;
         this.view.counter.innerHTML = this.#counter;
         if (this.#counter <= 0){
