@@ -45,8 +45,8 @@ class Game {
         this.#counter = 60;
         this.view = view;
         this.countDown = this.countDown.bind(this);
-        this.countDownInterval = setInterval(this.countDown, 1000);
 
+        setInterval(this.countDown, 1000);
     }
 
     countDown(){
@@ -56,7 +56,6 @@ class Game {
         if (this.#counter <= 0){
             this.#lives--;
             this.view.lives.innerHTML = this.#lives;
-            this.#moves = [];
             this.initializeGame();
         }
     }
@@ -94,7 +93,6 @@ class Game {
         if (this.#lives === 0 && this.#attempts === 10){
             this.#attempts = 0;
             this.view.attempts.innerHTML = this.#attempts;
-            clearInterval(this.countDownInterval);
             this.#counter = 0;
             this.view.counter.innerHTML = this.#counter;
             let gamePart = document.querySelector("#gamePart");
